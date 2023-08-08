@@ -1,12 +1,22 @@
   import './App.css';
-  // import MyApp from './classComponent/myApp.jsx';
-  //import MyApp from './functionalComponent/MyApp.jsx';
-  import MyApp from './Components/MyApp';
+  import APICalling from './Components/APICalling';
+  import Header from './Components/Header';
+  import Dashboard from './Components/Dashboard';
+  import { Route, Routes } from 'react-router-dom';
+  import TransferCoins from './Components/TransferCoins';
 
   function App() {
+    
     return (
       <div className="App">
-        <MyApp />
+        {/* <APICalling />  */}
+        {/* <Dashboard />  */}
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/about" element={<APICalling />} />
+          <Route path="/transfer" element={<TransferCoins />} />
+          <Route path="*" element={<Dashboard />} />
+        </Routes>
       </div>
     );
   }
